@@ -1,0 +1,20 @@
+{
+  "name": "prepgrid-ai",
+  "version": "1.0.0",
+  "description": "An AI-Based Interview Preparation website which helps to ace your Interview😉.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KY-max07/PrepGrid-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KY-max07/PrepGrid-AI/issues"
+  },
+  "homepage": "https://github.com/KY-max07/PrepGrid-AI#readme"
+}
