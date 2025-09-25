@@ -40,30 +40,60 @@ const ProfileImageUpload = ({ image, setImage }) => {
       />
 
       {!image ? (
-        <div className="flex flex-col items-center gap-2">
-          <LuUser className="text-gray-400" size={48} />
+        <div className="flex flex-col items-center gap-4">
+          {/* Profile Icon Container */}
+          <div
+            className="w-24 h-24 border-2 border-dashed border-gray-300 rounded-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group"
+            onClick={onChooseFile}
+          >
+            <LuUser
+              className="text-gray-400 group-hover:text-gray-500 transition-colors"
+              size={32}
+            />
+          </div>
+
+          {/* Upload Button */}
           <button
             type="button"
             onClick={onChooseFile}
-            className="flex items-center gap-2 text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+            className="flex items-center gap-2 text-sm bg-neutral-900 text-neutral-300 px-6 py-2 rounded-lg hover:bg-neutral-800 transition-colors font-medium"
           >
-            <LuUpload size={18} />
-            Upload Image
+            <LuUpload size={16} />
+            Upload Photo
           </button>
+
+          {/* Helper Text */}
+          <p className="text-xs text-gray-500 text-center">
+            Click to upload your profile picture
+          </p>
         </div>
       ) : (
-        <div className="relative">
+        <div className="relative group">
+          {/* Profile Image */}
           <img
             src={previewUrl}
             alt="profile photo"
-            className="w-32 h-32 object-cover rounded-full border shadow"
+            className="w-24 h-24 object-cover rounded-full border-2 border-gray-200 shadow-sm"
           />
+
+          {/* Overlay on hover */}
+          <div className="absolute inset-0 w-24 h-24 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button
+              type="button"
+              onClick={onChooseFile}
+              className="text-white text-xs font-medium hover:underline"
+            >
+              Change
+            </button>
+          </div>
+
+          {/* Remove Button */}
           <button
             type="button"
             onClick={handleRemoveImage}
-            className="absolute -top-2 -right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition"
+            className="absolute -top-1 -right-1 bg-red-500 text-white p-1.5 rounded-full hover:bg-red-600 transition-colors shadow-sm"
           >
-            <LuTrash size={16} />
+            <LuTrash size={12} />
           </button>
         </div>
       )}

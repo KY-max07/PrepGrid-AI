@@ -67,7 +67,7 @@ const CreateSessionForm = () => {
   };
 
   return (
-    <div className="w-[90vw] md:w-[35vw] p-6  rounded-lg shadow-md text-white">
+    <div className="w-[90vw] md:w-[35vw] p-6  rounded-lg shadow-md text-white ">
       <h3 className="text-3xl font-bold mb-4 text-center text-black/80">
         Start a New Interview Journey
       </h3>
@@ -122,14 +122,14 @@ const CreateSessionForm = () => {
           placeholder="(Any specific goals or notes for this session)"
           type="text"
           label="Description"
-          className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+          className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500 text-white"
         />
 
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
         <button
           type="submit"
-          className="w-full bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none   disabled:cursor-not-allowed transition duration-300 flex items-center justify-center gap-2"
+          className="w-full bg-black hover:bg-neutral-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none   disabled:cursor-not-allowed transition duration-300 flex items-center justify-center gap-2"
           disabled={isLoading}
         >
           {isLoading && <SpinnerLoader />} Create Session

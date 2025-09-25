@@ -27,13 +27,13 @@ const QuestionCard = ({
   };
 
   return (
-    <div className="bg-white rounded-lg mb-4 overflow-hidden py-4 px-5 shadow-xl shadow-gray-100/70 border border-gray-100/60 group">
+    <div className="bg-block rounded-lg mb-4 overflow-hidden py-5 px-5  border border-neutral-900/60 group">
       <div className="flex items-start justify-between cursor-pointer">
         <div className="flex items-start gap-3.5" onClick={toggleExpand}>
           <span className="text-xs md:text-[15px] font-semibold text-gray-400">
             Q
           </span>
-          <h3 className="text-xs md:text-[14px] font-medium text-gray-800 mr-4">
+          <h3 className="text-xs md:text-[14px] font-medium text-neutral-300 mr-4">
             {question}
           </h3>
         </div>
@@ -41,7 +41,7 @@ const QuestionCard = ({
         <div className="flex items-center justify-end ml-4 relative">
           <div className={`flex ${isExpanded ? "md:flex" : "md:hidden group-hover:flex"}`}>
             <button
-              className="flex items-center gap-2 text-xs text-indigo-800 font-medium bg-indigo-50 px-3 py-1 mr-2 rounded text-nowrap border border-indigo-50 hover:border-indigo-200 cursor-pointer "
+              className="flex items-center gap-2 text-xs text-indigo-800 font-medium bg-indigo-50 px-3 h-5 mr-2 rounded text-nowrap border border-indigo-50 hover:border-indigo-200 cursor-pointer "
               onClick={onTogglePin}
             >
               {isPinned ? (
@@ -51,7 +51,7 @@ const QuestionCard = ({
               )}
             </button>
             <button
-              className="flex items-center gap-2 text-xs text-cyan-800 font-medium text-medium bg-cyan-50 px-3 py-1 mr-2 rounded text-nowrap border border-cyan-50 hover:border-cyan-200 cursor-pointer"
+              className="flex items-center gap-2 text-xs text-cyan-800 font-medium text-medium bg-cyan-50 px-3 h-5 mr-2 rounded text-nowrap border border-cyan-50 hover:border-cyan-200 cursor-pointer"
               onClick={() => {
                 setIsExpanded(true);
                 onLearnMore();
@@ -77,7 +77,7 @@ const QuestionCard = ({
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: `${height}px` }}
       >
-        <div ref={contentRef} className="mt-4 text-gray-700 bg-gray-50 px-5 py-3 rounded-lg">
+        <div ref={contentRef} className="mt-4 text-neutral-500 bg-neutral-800/50 px-5 py-3 rounded-lg">
           {/* Assuming AIResponsePreview is a component that renders formatted content */}
           <AIResponsePreview content={answer} />
         </div>

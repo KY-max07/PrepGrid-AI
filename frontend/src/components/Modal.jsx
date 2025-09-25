@@ -4,9 +4,9 @@ const Modal = ({ children, isOpen, onClose, title, hideHeader }) => {
   if (!isOpen) return null; // Don't render modal if not open
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 bg-opacity-50">
       {/* Modal Content */}
-      <div className="relative flex flex-col bg-white shadow-lg rounded-lg p-6">
+      <div className="relative flex flex-col bg-amber-50 shadow-lg rounded-lg p-6 backdrop-blur-sm">
         
         {/* Modal Header */}
         {hideHeader && (

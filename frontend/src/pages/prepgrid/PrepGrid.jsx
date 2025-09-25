@@ -89,46 +89,46 @@ const PrepGrid = () => {
 
   // Add more questions to a session
   // Add more questions to a session
-const uploadMoreQuestions = async () => {
-  try {
-    setIsUpdateLoader(true);
+  const uploadMoreQuestions = async () => {
+    try {
+      setIsUpdateLoader(true);
 
-    // Call AI API to generate questions
-    const aiResponse = await axiosInstance.post(
-      API_PATHS.AI.GENERATE_QUESTIONS,
-      {
-        role: sessionData?.role,
-        experience: sessionData?.experience,
-        topicsToFocus: sessionData?.topicsToFocus,
-        numberOfQuestions: 10,
+      // Call AI API to generate questions
+      const aiResponse = await axiosInstance.post(
+        API_PATHS.AI.GENERATE_QUESTIONS,
+        {
+          role: sessionData?.role,
+          experience: sessionData?.experience,
+          topicsToFocus: sessionData?.topicsToFocus,
+          numberOfQuestions: 10,
+        }
+      );
+
+      // Should be array like [{question, answer}, ...]
+      const generatedQuestions = aiResponse.data;
+
+      const response = await axiosInstance.post(
+        API_PATHS.QUESTION.ADD_TO_SESSION,
+        {
+          sessionId,
+          questions: generatedQuestions,
+        }
+      );
+
+      if (response.data) {
+        toast.success("Added More Q&A!!");
+        fetchSessionDetailsById();
       }
-    );
-
-    // Should be array like [{question, answer}, ...]
-    const generatedQuestions = aiResponse.data;
-
-    const response = await axiosInstance.post(
-      API_PATHS.QUESTION.ADD_TO_SESSION,
-      {
-        sessionId,
-        questions: generatedQuestions,
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        setErrorMsg(error.response.data.message);
+      } else {
+        setErrorMsg("Something went wrong. Please try again.");
       }
-    );
-
-    if (response.data) {
-      toast.success("Added More Q&A!!");
-      fetchSessionDetailsById();
+    } finally {
+      setIsUpdateLoader(false);
     }
-  } catch (error) {
-    if (error.response && error.response.data.message) {
-      setErrorMsg(error.response.data.message);
-    } else {
-      setErrorMsg("Something went wrong. Please try again.");
-    }
-  } finally {
-    setIsUpdateLoader(false);
-  }
-};
+  };
 
   useEffect(() => {
     if (sessionId) {
@@ -140,7 +140,7 @@ const uploadMoreQuestions = async () => {
 
   return (
     <DashBoardLayout>
-      <div className="">
+      <div className="pl-3">
         <RoleInfoHeader
           role={sessionData?.role || ""}
           topicsToFocus={sessionData?.topicsToFocus || ""}
@@ -194,7 +194,7 @@ const uploadMoreQuestions = async () => {
                       sessionData?.questions?.length == index + 1 && (
                         <div className="flex items-center justify-center mt-5">
                           <button
-                            className="flex items-center gap-3 text-sm text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg px-5 py-2.5"
+                            className="flex items-center gap-3 text-sm text-black bg-neutral-100 hover:bg-neutral-300 font-medium rounded-lg px-5 py-2.5"
                             disabled={isLoading || isUpdateLoader}
                             onClick={uploadMoreQuestions}
                           >

@@ -14,7 +14,7 @@ const AIResponsePreview = ({ content }) => {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
-            code({ node, className, children, ...props }) {
+            code({  className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
               const language = match ? match[1] : "";
               const isInline = !className;
@@ -25,7 +25,7 @@ const AIResponsePreview = ({ content }) => {
                   language={language}
                 />
               ) : (
-                <code className="px-1 py-0.5 bg-gray-300/50 rounded-sm text-red-500" {...props}>
+                <code className="px-1 py-0.5 bg-neutral-700/50 rounded-sm text-neutral-400" {...props}>
                   {children}
                 </code>
               );
@@ -147,8 +147,8 @@ function CodeBlock({ code, language }) {
   };
 
   return (
-    <div className="relative my-6 rounded-lg overflow-hidden bg-gray-50 border border-gray-200">
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-100 border-b border-gray-200">
+    <div className="relative my-6 rounded-lg overflow-hidden bg-block border border-b-neutral-700">
+      <div className="flex items-center justify-between px-4 py-2  border-b border-neutral-700">
         <div className="flex items-center space-x-2">
           <LuCode size={16} className="text-gray-500" />
           <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -168,18 +168,21 @@ function CodeBlock({ code, language }) {
         </button>
       </div>
       <SyntaxHighlighter
-        language={language}
-        style={oneLight}
-        customStyle={{
-          fontSize: 12.5,
-          margin: 0,
-          padding: "1rem",
-          background: "transparent",
-        }}
-        showLineNumbers={true}
-      >
-        {code}
-      </SyntaxHighlighter>
+  language={language}
+  style={oneLight}
+  wrapLines={true}
+  lineProps={{
+    style: { backgroundColor: "black" , color : "grey"} // 👈 background for text lines
+  }}
+  customStyle={{
+    fontSize: 12.5,
+    margin: 0,
+    padding: "1rem",
+    background: "transparent", // 👈 change background here
+  }}
+>
+  {code}
+</SyntaxHighlighter>
     </div>
   );
 }
