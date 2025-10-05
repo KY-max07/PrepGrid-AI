@@ -1,6 +1,6 @@
 # PrepGrid‑AI
 
-![PrepGrid screenshot](frontend/public/prepgrid-interviewqns.png)
+![PrepGrid screenshot](frontend/public/prepgrid-explanation.png)
 
 An AI-powered interview preparation app that helps you generate tailored interview questions, review sessions, and get clear explanations for concepts.
 
@@ -152,25 +152,6 @@ Recommended setup:
 }
 ```
 
-This fixes 404s on page refresh for client-side routes.
-
-If you deploy from the repo root instead, ensure the root `vercel.json` does not rewrite API/static requests. Example:
-
-```json
-{
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://YOUR-BACKEND_HOST/api/$1"
-    },
-    {
-      "source": "/uploads/(.*)",
-      "destination": "https://YOUR-BACKEND_HOST/uploads/$1"
-    },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
-```
 
 ### Backend (Vercel/Render/Railway/Other)
 
