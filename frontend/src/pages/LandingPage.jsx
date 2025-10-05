@@ -65,7 +65,7 @@ const LandingPage = () => {
               ) : (
                 <div className="gap-3 flex font-bold md:text-lg text-xs text-neutral-300  ">
                   <button
-                    className="hover:bg-[#222222]  transition-colors duration-300 ease-in-out md:px-3 py-1 rounded-xl pb-2 cursor-pointer "
+                    className="hover:bg-[#222222]  transition-colors duration-300 ease-in-out md:px-3 py-1 rounded-xl pb-2 cursor-pointer relative top-0.5 md:top-0"
                     onClick={() => Handlelogin()}
                   >
                     Log In
@@ -83,7 +83,7 @@ const LandingPage = () => {
 
           {/* Hero Content - Centered */}
           <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
-            <h1 className="text-xl md:text-6xl font-extrabold text-neutral-200 mb-2 leading-tight border p-2 px-10 bg-secondary border-neutral-700/50 font-display tracking-wide">
+            <h1 className="text-2xl md:text-6xl font-extrabold text-neutral-200 mb-2 leading-tight border p-2 px-10 bg-secondary border-neutral-700/50 font-display tracking-wide">
               Level Up, Land Your
               <br />
               <span className="">Dream With AI</span>

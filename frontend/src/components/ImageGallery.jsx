@@ -11,9 +11,9 @@ export default function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState(images[3]);
 
   return (
-    <div className="flex items-center  justify-center w-full h-full gap-8 p-8">
+    <div className="flex items-center  md:flex-row flex-col justify-center w-full h-full gap-8 md:p-8 p-2 py-8">
       {/* Thumbnails */}
-      <div className="flex gap-1 flex-col ">
+      <div className="md:flex gap-1 flex-col hidden">
         {images.map((img, index) => (
           <img
             key={index}
@@ -38,7 +38,24 @@ export default function ImageGallery() {
             className=" w-full h-full"
           />
         </div>
+        
       )}
+      <div className="md:hidden gap-1  flex">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Thumbnail ${index}`}
+            className={`rounded h-10 w-15 cursor-pointer ${
+              selectedImage === img
+                ? "p-1 border-2 border-blue-500/20"
+                : "p-0.5 border-2 border-blue-500/0"
+            } transition-all`}
+            onClick={() => setSelectedImage(img)}
+          />
+        ))}
+      </div>
+
     </div>
   );
 }
