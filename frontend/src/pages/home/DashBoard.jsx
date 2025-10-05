@@ -7,7 +7,7 @@ import moment from "moment";
 import { CARD_BG } from "../../utils/data";
 import SummaryCard from "../../components/cards/SummaryCard";
 import Modal from "../../components/Modal";
-import CreateSessionForm from "./createSessionFrom";
+import CreateSessionForm from "./CreateSessionFrom";
 import DeleteAlertContent from "../../components/DeleteAlertContent";
 import toast from "react-hot-toast";
 import { FaBolt } from "react-icons/fa6";
