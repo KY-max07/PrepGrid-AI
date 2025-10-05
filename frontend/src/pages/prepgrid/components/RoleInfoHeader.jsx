@@ -9,13 +9,13 @@ const RoleInfoHeader = ({
 }) => {
   return (
     <div className=" relative pt-20">
-      <div className="container mx-auto px-10 md:px-0">
+      <div className="container mx-auto ">
         <div className="h-[200px] flex flex-col justify-center relative z-10">
           <div className="flex items-start">
             <div className="flex-grow">
               <div className="flex justify-between items-start">
                 <div>
-                  <h2 className="text-3xl font-medium">{role}</h2>
+                  <h2 className="md:text-3xl text-2xl font-medium">{role}</h2>
                   <p className="text-sm text-medium text-neutral-400 mt-1">
                     {topicsToFocus}
                   </p>

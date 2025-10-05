@@ -76,6 +76,17 @@ const DashBoard = () => {
     <DashBoardLayout>
       <div className="container mx-auto  bg-secondary">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7 pt-1 pb-6 px-2 md:px-4">
+          {sessions.length === 0 && (
+            <div className="col-span-3 flex items-center justify-center gap-4 flex-col w-full h-[50vh]">
+              <h1 className="text-xl text-neutral-400">No sessions found. Create a new session to get started.</h1>
+              <button
+                onClick={() => setOpenCreateModal(true)}
+                className="bg-linear bg-amber-200 px-4 rounded-full hover:bg-amber-300 transition-colors duration-300 ease-in-out text-neutral-950"
+              >
+                Create New Session
+              </button>
+            </div>
+          )}
           {sessions?.map((data, index) => (
             <SummaryCard
               key={data?._id}
@@ -104,7 +115,7 @@ const DashBoard = () => {
         </button> */}
         <button
           onClick={() => setOpenCreateModal(true)}
-          class="absolute bottom-10 right-10 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-white rounded-md shadow-2xl group"
+          class="fixed md:bottom-10 md:right-10 bottom-2 right-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-white rounded-md shadow-2xl group bg-neutral-950 text-sm md:text-md"
         >
           <span class="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-0 bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 group-hover:opacity-100"></span>
 

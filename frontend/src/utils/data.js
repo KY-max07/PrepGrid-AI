@@ -28,16 +28,16 @@ export const APP_FEATURES = [
   },
   {
     id: "03",
+    title: "GET DETAILED EXPLANATION",
+    description:"Get explanations to a specific question to get detailed understanding.",
+    icon: "chart",
+  },
+  {
+    id: "04",
     title: "SMART PRACTICE",
     description:
       "Practice with intelligent feedback and detailed explanations to improve your interview performance.",
     icon: "brain",
   },
-  {
-    id: "04",
-    title: "PROGRESS TRACKING",
-    description:
-      "Monitor your preparation progress with detailed analytics and personalized improvement recommendations.",
-    icon: "chart",
-  },
+ 
 ];

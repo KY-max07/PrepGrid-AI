@@ -70,7 +70,7 @@ const SummaryCard = ({
         </div>
       </div>
       <p className="text-xs text-gray-500 font-medium line-clamp-2 mt-4 capitalize px-2">
-        {description}.
+        {description}
       </p>
     </div>
   );
