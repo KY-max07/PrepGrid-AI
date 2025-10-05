@@ -12,8 +12,8 @@ import RoleInfoHeader from "./components/RoleInfoHeader";
 import QuestionCard from "./components/QuestionCard";
 import Drawer from "./components/Drawer";
 import AIResponsePreview from "./components/AIResponsePreview";
-import SkeletonLoader from "../../components/loader/SkeletonLoder";
-import SpinnerLoader from "../../components/loader/spinnerLoader";
+import SkeletonLoader from "../../components/loader/SkeletonLoader";
+import SpinnerLoader from "../../components/loader/SpinnerLoader";
 
 const PrepGrid = () => {
   const { sessionId } = useParams();
