@@ -60,7 +60,7 @@ const SignUp = ({ setCurrentPage, onClose }) => {
         updateUser(response.data);
         navigate("/dashboard");
       }
-      // await axios.post(...) or your login API
+      // await axios.post
     } catch (error) {
       if (error.response?.data?.message) {
         setError(error.response.data.message);
@@ -75,7 +75,7 @@ const SignUp = ({ setCurrentPage, onClose }) => {
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+        className="absolute cursor-pointer top-4 right-4 z-50 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
       >
         <svg
           className="w-4 h-4 text-gray-600"
@@ -92,12 +92,11 @@ const SignUp = ({ setCurrentPage, onClose }) => {
         </svg>
       </button>
 
-      {/* Left Column - Promotional Content */}
+   
       <div className="hidden lg:flex lg:w-3/5 bg-black relative overflow-hidden">
-        {/* Dark Tech Background */}
+      
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-zinc-900"></div>
 
-        {/* Hexagonal Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-16 h-16 border border-white/20 rotate-45"></div>
           <div className="absolute top-32 right-32 w-12 h-12 border border-white/15 rotate-12"></div>
@@ -106,22 +105,21 @@ const SignUp = ({ setCurrentPage, onClose }) => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 border border-white/10 rotate-45"></div>
         </div>
 
-        {/* Circuit-like Lines */}
         <div className="absolute inset-0 opacity-15">
-          {/* Main circuit path */}
+       
           <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
           <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"></div>
           <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/25 to-transparent"></div>
 
-          {/* Vertical connectors */}
+       
           <div className="absolute top-1/4 left-1/4 w-px h-32 bg-gradient-to-b from-cyan-400/30 to-transparent"></div>
           <div className="absolute top-1/2 right-1/4 w-px h-24 bg-gradient-to-b from-blue-400/20 to-transparent"></div>
           <div className="absolute bottom-1/4 left-1/2 w-px h-28 bg-gradient-to-b from-purple-400/25 to-transparent"></div>
         </div>
 
-        {/* Floating Elements */}
+     
         <div className="absolute inset-0">
-          {/* Glowing dots */}
+        
           <div className="absolute top-16 left-16 w-3 h-3 bg-cyan-400/40 rounded-full blur-sm animate-pulse"></div>
           <div
             className="absolute top-24 right-24 w-2 h-2 bg-blue-400/50 rounded-full blur-sm animate-pulse"
@@ -137,7 +135,7 @@ const SignUp = ({ setCurrentPage, onClose }) => {
           ></div>
         </div>
 
-        {/* Corner Tech Elements */}
+       
         <div className="absolute inset-10">
           <div className="absolute top-8 left-8 w-8 h-8 border-l-2 border-t-2 border-cyan-400/30"></div>
           <div className="absolute top-8 right-8 w-8 h-8 border-r-2 border-t-2 border-blue-400/30"></div>
@@ -167,7 +165,7 @@ const SignUp = ({ setCurrentPage, onClose }) => {
         </h1>
 
         {/* Login Link */}
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 mb-8 pb-15">
           Already have an account?{" "}
           <button
             className="text-blue-600 hover:underline font-medium"
@@ -223,11 +221,11 @@ const SignUp = ({ setCurrentPage, onClose }) => {
             />
           </div>
 
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className="text-red-500 text-sm px-2 pb-2">{error}</p>}
 
           <button
             type="submit"
-            className="w-full bg-neutral-900 text-neutral-300 py-3 px-4 rounded-lg font-medium hover:bg-neutral-800 transition-colors"
+            className="w-full bg-neutral-800 text-neutral-300 cursor-pointer py-3 px-4 rounded-lg font-medium hover:bg-neutral-950 transition-colors"
           >
             Create Account
           </button>

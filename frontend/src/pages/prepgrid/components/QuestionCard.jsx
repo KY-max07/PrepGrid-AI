@@ -62,7 +62,7 @@ const QuestionCard = ({
             </button>
           </div>
           <button
-            className="text-gray-500 ml-3"
+            className="text-gray-500 ml-3 cursor-pointer"
             onClick={toggleExpand}
           >
             <LuChevronDown

@@ -1,8 +1,6 @@
 import React from "react";
 
 const DeleteAlertContent = ({ content, onDelete, onCancel }) => {
-
-  
   return (
     <div className="p-5">
       <p className="text-[14px] text-gray-600 mb-6">{content}</p>

@@ -7,14 +7,15 @@ const Modal = ({ children, isOpen, onClose, title, hideHeader }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 bg-opacity-50">
       {/* Modal Content */}
       <div className="relative flex flex-col bg-amber-50 shadow-lg rounded-lg p-6 backdrop-blur-sm">
-        
         {/* Modal Header */}
         {hideHeader && (
           <div className="flex justify-between items-center  pb-3 mb-4 absolute right-4 top-4">
-            <h3 className="text-lg font-semibold text-gray-800 bg-red-300">{title}</h3>
+            <h3 className="text-lg font-semibold text-gray-800 bg-red-300">
+              {title}
+            </h3>
             <button
               type="button"
-              className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-700"
+              className="p-2 rounded-xl hover:bg-gray-500 text-gray-800 hover:text-gray-900 cursor-pointer"
               onClick={onClose}
             >
               <svg

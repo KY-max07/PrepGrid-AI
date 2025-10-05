@@ -157,7 +157,7 @@ function CodeBlock({ code, language }) {
         </div>
         <button
           onClick={copyCode} 
-          className="flex items-center gap-1.5 text-xs font-medium text-gray-600"
+          className="flex items-center gap-1.5 text-xs font-medium text-gray-600 cursor-pointer"
         >
           {copied ? (
             <LuCheck size={16} className="text-green-600" />

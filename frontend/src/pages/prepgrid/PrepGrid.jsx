@@ -194,7 +194,7 @@ const PrepGrid = () => {
                       sessionData?.questions?.length == index + 1 && (
                         <div className="flex items-center justify-center mt-5">
                           <button
-                            className="flex items-center gap-3 text-sm text-black bg-neutral-100 hover:bg-neutral-300 font-medium rounded-lg px-5 py-2.5"
+                            className="flex items-center gap-3 cursor-pointer text-sm text-black bg-neutral-100 hover:bg-neutral-300 font-medium rounded-lg px-5 py-2.5"
                             disabled={isLoading || isUpdateLoader}
                             onClick={uploadMoreQuestions}
                           >

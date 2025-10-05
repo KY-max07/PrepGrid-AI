@@ -13,12 +13,12 @@ const aiRoutes = require("./routes/aiRoutes");
 
 
 const app = express();
-
+const allowedOrigins = ["https://prepgrid.vercel.app", "http://localhost:5173"];
 
 //middleware to handle cors
 app.use(cors(
     {
-        origin: "https://prepgrid.vercel.app",
+        origin: allowedOrigins,
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     }

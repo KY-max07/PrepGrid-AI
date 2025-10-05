@@ -43,7 +43,7 @@ const ProfileImageUpload = ({ image, setImage }) => {
         <div className="flex flex-col items-center gap-4">
           {/* Profile Icon Container */}
           <div
-            className="w-24 h-24 border-2 border-dashed border-gray-300 rounded-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group"
+            className="w-24 h-24  border-2 border-dashed border-gray-300 rounded-full flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group"
             onClick={onChooseFile}
           >
             <LuUser
@@ -56,7 +56,7 @@ const ProfileImageUpload = ({ image, setImage }) => {
           <button
             type="button"
             onClick={onChooseFile}
-            className="flex items-center gap-2 text-sm bg-neutral-900 text-neutral-300 px-6 py-2 rounded-lg hover:bg-neutral-800 transition-colors font-medium"
+            className="flex items-center cursor-pointer gap-2 text-sm bg-neutral-900 text-neutral-300 px-6 py-2 rounded-lg hover:bg-neutral-800 transition-colors font-medium"
           >
             <LuUpload size={16} />
             Upload Photo
@@ -77,11 +77,11 @@ const ProfileImageUpload = ({ image, setImage }) => {
           />
 
           {/* Overlay on hover */}
-          <div className="absolute inset-0 w-24 h-24 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <div className="absolute  inset-0 w-24 h-24 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <button
               type="button"
               onClick={onChooseFile}
-              className="text-white text-xs font-medium hover:underline"
+              className="text-white text-xs font-medium hover:underline cursor-pointer"
             >
               Change
             </button>
@@ -91,7 +91,7 @@ const ProfileImageUpload = ({ image, setImage }) => {
           <button
             type="button"
             onClick={handleRemoveImage}
-            className="absolute -top-1 -right-1 bg-red-500 text-white p-1.5 rounded-full hover:bg-red-600 transition-colors shadow-sm"
+            className="absolute -top-1 -right-1 bg-red-500 text-white p-1.5  cursor-pointer rounded-full hover:bg-red-600 transition-colors shadow-sm"
           >
             <LuTrash size={12} />
           </button>

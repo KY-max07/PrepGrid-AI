@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import IMG_HERO from "../assets/HER0-IMG.jpg";
+
 import { useNavigate } from "react-router-dom";
 import { APP_FEATURES } from "../utils/data";
 import Modal from "../components/Modal";
@@ -47,12 +47,16 @@ const LandingPage = () => {
           {/* Header */}
           <header className="flex justify-between items-center mb-7">
             <div className="w-1/3">
-              <img src={prepgrid} alt="PREPGRID" className=" h-6 " />
+              <img
+                src={prepgrid}
+                alt="PREPGRID"
+                className=" h-6 cursor-pointer "
+              />
             </div>
             <img
               src={prepgridIcon}
               alt=""
-              className="w-1/3 h-7 hidden md:block"
+              className="w-1/3 h-7 hidden md:block cursor-pointer "
             />
 
             <div className="md:w-1/3 flex items-center justify-end-safe">
@@ -61,13 +65,13 @@ const LandingPage = () => {
               ) : (
                 <div className="gap-3 flex font-bold md:text-lg text-xs text-neutral-300  ">
                   <button
-                    className="hover:bg-[#222222]  transition-colors duration-300 ease-in-out md:px-3 py-1 rounded-xl pb-2 "
+                    className="hover:bg-[#222222]  transition-colors duration-300 ease-in-out md:px-3 py-1 rounded-xl pb-2 cursor-pointer "
                     onClick={() => Handlelogin()}
                   >
                     Log In
                   </button>
                   <button
-                    className="bg-[#222222]/80 hover:bg-[#222222]  transition-colors duration-300 ease-in-out md:px-3 px-2  py-1 rounded-xl pb-1"
+                    className="bg-[#222222]/80 hover:bg-[#222222]  transition-colors cursor-pointer duration-300 ease-in-out md:px-3 px-2  py-1 rounded-xl pb-1"
                     onClick={() => HandleSignUp()}
                   >
                     Register
@@ -87,8 +91,11 @@ const LandingPage = () => {
 
             <p className="text-xs  text-gray-400 mb-6 max-w-2xl p-7">
               Get role-specific questions, expand answers when you need them,
-              dive deeper into concepts<span className="hidden md:block">, and organize everything your way. From
-              preparation to mastery — your ultimate interview toolkit is here.</span>
+              dive deeper into concepts
+              <span className="hidden md:block">
+                , and organize everything your way. From preparation to mastery
+                — your ultimate interview toolkit is here.
+              </span>
             </p>
 
             <div className="md:bg-block w-full md:w-1/2 lg:w-1/3 p-2 flex items-center justify-center md:justify-between rounded-lg text-sm md:text-md">
@@ -96,7 +103,7 @@ const LandingPage = () => {
                 Do you want role-specific preparation?
               </h3>
               <button
-                className="bg-white/60 text-black text-xs md:text-sm font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
+                className="bg-white/60 text-black text-xs cursor-pointer md:text-sm font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
                 onClick={HandleCTA}
               >
                 Get Started
@@ -120,9 +127,7 @@ const LandingPage = () => {
                       <h3
                         onClick={() => setSelectedTab("Dashboard")}
                         className={`cursor-pointer rounded py-1 w-3/8 px-2 text-center ${
-                          selectedTab === "Dashboard"
-                            ? "bg-neutral-700/30"
-                            : ""
+                          selectedTab === "Dashboard" ? "bg-neutral-700/30" : ""
                         }`}
                       >
                         Dashboard
@@ -131,7 +136,7 @@ const LandingPage = () => {
                         onClick={() => setSelectedTab("Interview Questions")}
                         className={`cursor-pointer  rounded py-1 w-5/8 px-2 text-center ${
                           selectedTab === "Interview Questions"
-                            ? "bg-neutral-700/30" 
+                            ? "bg-neutral-700/30"
                             : ""
                         }`}
                       >
@@ -139,39 +144,69 @@ const LandingPage = () => {
                       </h3>
                     </div>
 
-                   
                     <div className="p-2  rounded shadow">
                       {selectedTab === "Dashboard" && (
                         <div>
-                          <img src="/prepgrid-dashboard.png" alt="Dashboard" className="border-2  rounded border-neutral-800/80" />
-                          <p className=" text-xs text-neutral-500 pt-4 ">The Dashboard provides information about all your sessions, with a summary based on the most recently created sessions. </p>
-                          <p className=" text-xs text-neutral-500 pt-2"> It gives you a detailed overview of the sessions you have created.</p>
-
+                          <img
+                            src="/prepgrid-dashboard.png"
+                            alt="Dashboard"
+                            className="border-2  rounded border-neutral-800/80"
+                          />
+                          <p className=" text-xs text-neutral-500 pt-4 ">
+                            The Dashboard provides information about all your
+                            sessions, with a summary based on the most recently
+                            created sessions.{" "}
+                          </p>
+                          <p className=" text-xs text-neutral-500 pt-2">
+                            {" "}
+                            It gives you a detailed overview of the sessions you
+                            have created.
+                          </p>
                         </div>
                       )}
 
                       {selectedTab === "Interview Questions" && (
                         <div>
-                        <img src="/prepgrid-interviewqns.png" alt="Dashboard" className="border-2  rounded border-neutral-800/80" />
-                        <p className="text-xs text-neutral-500 pt-4 ">The Interview Questions page provides questions based on job role, experience level, and topics to focus on. </p>
-                        <p className="text-xs text-neutral-500 pt-2"> Using AI, it generates detailed questions along with simplified solutions. You can also choose to view a more detailed explanation if you prefer.</p>
-
-                      </div>
+                          <img
+                            src="/prepgrid-interviewqns.png"
+                            alt="Dashboard"
+                            className="border-2  rounded border-neutral-800/80"
+                          />
+                          <p className="text-xs text-neutral-500 pt-4 ">
+                            The Interview Questions page provides questions
+                            based on job role, experience level, and topics to
+                            focus on.{" "}
+                          </p>
+                          <p className="text-xs text-neutral-500 pt-2">
+                            {" "}
+                            Using AI, it generates detailed questions along with
+                            simplified solutions. You can also choose to view a
+                            more detailed explanation if you prefer.
+                          </p>
+                        </div>
                       )}
                     </div>
                   </div>
                   <div className="w-full h-1/3 bg-block rounded-lg p-2 pt-4">
-                  <h2 className="text-md  mb-2 w-full capitalize text-neutral-400 flex gap-2 items-center justify-center ">  <LuPin />Pin & learn more <LuSparkles /></h2>
-                  
-                  <div className="flex flex-col  gap-2 p-4">
-                    <p className="text-xs text-neutral-500 flex gap-2  ">
-                        Pin a question. Click on the sparkles to learn more about the question.
-                    </p>
-                    <p className="text-xs text-neutral-500 ">
-                     <span className="">Pinging a question is helpful for getting quick insights, and explanations make it easier to understand.</span> 
-                    </p>
-                  </div>
-                  
+                    <h2 className="text-md  mb-2 w-full capitalize text-neutral-400 flex gap-2 items-center justify-center ">
+                      {" "}
+                      <LuPin />
+                      Pin & learn more <LuSparkles />
+                    </h2>
+
+                    <div className="flex flex-col  gap-2 p-4">
+                      <p className="text-xs text-neutral-500 flex gap-2  ">
+                        Pin a question. Click on the sparkles to learn more
+                        about the question.
+                      </p>
+                      <p className="text-xs text-neutral-500 ">
+                        <span className="">
+                          Pinging a question is helpful for getting quick
+                          insights, and explanations make it easier to
+                          understand.
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
