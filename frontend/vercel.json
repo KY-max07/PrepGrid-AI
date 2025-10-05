@@ -1,13 +1,8 @@
 {
-    "version": 3,
-    "name": "prepgrid-ai",
-    "framework": "vite",
-    "buildCommand": "cd frontend && npm install && npm run build",
-    "outputDirectory": "frontend/dist",
-    "routes": [
+    "rewrites": [
       {
-        "src": "/(.*)",
-        "dest": "/frontend/dist/index.html"
+        "source": "/(.*)",
+        "destination": "/"
       }
     ]
   }
