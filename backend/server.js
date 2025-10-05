@@ -18,7 +18,7 @@ const app = express();
 //middleware to handle cors
 app.use(cors(
     {
-        origin: "*",
+        origin: "https://prepgrid.vercel.app",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     }
