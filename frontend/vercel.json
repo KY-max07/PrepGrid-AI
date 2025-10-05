@@ -1,13 +1,9 @@
 {
-    "version": 2,
-    "name": "prepgrid-frontend",
-    "builds": [
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/static-build",
-        "config": { "distDir": "frontend/dist" }
-      }
-    ],
+    "version": 3,
+    "name": "prepgrid-ai",
+    "framework": "vite",
+    "buildCommand": "cd frontend && npm install && npm run build",
+    "outputDirectory": "frontend/dist",
     "routes": [
       {
         "src": "/(.*)",
